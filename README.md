@@ -14,6 +14,6 @@ Hubble imaging of the HUDF consists of imaging in 8 optical and near-IR filters 
 
 The filter transmission curves for these filters, showing the fraction of light transmitted through each filter as a function of wavelength, are shown in Figure. For each filter there are a pair of images: a science (sci) and weight (wht) image. These respectively contain the signal in electrons per second (e/s), and an estimate of the noise in each pixel. The noise can be estimated from the weight according to:
 
-noise = 1√weight
+$$ noise = {1 \over \sqrt{weight}} $$
 
 Because of the way these high-level science images were constructed most of the pixels in these images are actually empty (unobserved). For this reason a mask is also provided allowing you to easily mask empty and other unwanted pixels.
