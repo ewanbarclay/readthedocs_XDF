@@ -39,10 +39,10 @@ First, we’ll look at analysing the pixel data in the image. [example1](/Exampl
 |:---------------------------|---|
 |  | First, model the noise as a gaussian centred at zero and estimate σ for the F105W band. **Hint:** there should be no signal contribution to the negative pixels so you can use them to measure σ. To do this first exclude positive pixels. σ will then simply be −P31.7 (i.e. the negative of the 31.7th percentile). Next, exclude pixels with magnitude > 10σ and plot both a density histogram (**Hint:** use plt.hist(..., density = True)) of the pixel distribution and a normal distribution with the same σ as you’ve just calculated. They won’t align perfectly as the pixel distribution unsurprisingly contains more positive pixels. |
   
-## 1.2  Cutting out an image
+### 1.2  Cutting out an image
 Often we only want to analyse a small portion (a cutout) of an image instead of the full image. This can be done by slicing the image array, for example cutout = img[xmin:xmax, xmin:xmax] or via a python slice. An example of slicing is given in [example2](/Examples/example2.ipynb).
   
-## 1.3  Making plots of images
+### 1.3  Making plots of images
 We’ll now look at exploring some image data. The image data you’ve read in is simply stored as a 2D array of pixel values. As such we can simply use plt.imshow(image) to produce a plot of the image. [example2](/Examples/example2.ipynb) demonstrates how to do this.
   
 | ❓ | **TASK 1B: *Weight Map***|
@@ -57,8 +57,50 @@ We’ll now look at exploring some image data. The image data you’ve read in i
 Figure 2: Plot of the trimmed centre of the F125W-band HUDF created by [example2](/Examples/example2.ipynb).
 </p>
   
-## 1.4  Combining (stacking) images
+### 1.4  Combining (stacking) images
 A common task is to combine images either taken with the same filter (often) or with different filters (occasionally). Doing so boosts the sensitivity of the image, albeit, in the latter case, at the expense of the loss of spectral information. To optimise the sensitivity images should be combined by weighting each image with its corresponding weight image. An example of this process is shown in [example4](/Examples/example4.ipynb).
   
-## 1.5  Making colour images
+### 1.5  Making colour images
 Most people’s experience with *Hubble* imaging is from the glorious colour images available here. As explained in the introduction *Hubble’s* does not capture 'colour' images. Instead images in multiple filters are combined together. To obtain 'full-colour' requires at least 3 filters, thereby mimicking the human visual system. The simplest application is to simply map 3 filters to the red (R), green (G), and blue (B) channels. [example3](/Examples/example3.ipynb) demonstrates how to do this using 3 of the ACS bands. Figure 3 shows one of the outputs of [example3](/Examples/example3.ipynb).
+
+
+<figure>
+<p align="center">
+  <img src="/Images/XDF_centre_rgb.jpg" alt="Trulli" style="width:60%" align = "center">
+</p>
+<p align = "center">
+Figure 3: RGB image of the centre of the F125W-band HUDF created by [example3](/Examples/example3.ipynb).
+</p>
+
+
+| ❓ | **TASK 1C: *RGB image***|
+|:---------------------------|----|
+|  | Using [example3](/Examples/example3.ipynb) and [example4](/Examples/example4.ipynb) as guides produce a false-colour image of the entire masked XDF using <ins>all 8 filters<ins>. You should define 3 groups of consecutive filters (e.g. ['f435w','f606w'], ['f775w','f850lp'], ['f105w','f125w','f140w','f160w']), combine each group, and then combine those stacks together into an RGB image. Congratulations you’ve now created your own pretty HUDF image. By choosing different filters in each group and playing with the scaling you can make an entirely unique and original version. |
+
+## 2  Detecting and measuring sources
+The next part of the project concentrates on identifying, and measuring the properties of sources or objects.
+
+| ❓ | **TASK 2A: *Detection Image***|
+|:---------------------------|----|
+|  | First of all, following [example4](/Examples/example4.ipynb), create a detection science and weight image by stacking the F105W, F125W, F140W, and F160W images together. You will use this image to detect faint sources. |
+
+### 2.1  Significance maps
+To identify sources we need to have an estimate of the noise in each pixel. In the context of *Hubble* this is provided by the weight (wht) map in each filter. The values in this image correspond to:
+
+$$ weight = {1 \over \sq{noise}} $$
+
+By dividing the signal (science, or sci) map by the noise map (derived from the weight map) we can obtain a significance map, essentially the sigma-to-noise in every pixel. [example5](/Examples/example5.ipynb) demonstrates this and Figure 4 shows the output.
+
+<figure>
+<p align="center">
+  <img src="/Images/significance map.jpg" alt="Trulli" style="width:60%" align = "center">
+</p>
+<p align = "center">
+Figure 4: : F105W significance image of the centre of the HUDF created by [example5](/Examples/example5.ipynb). Pixels coloured in grey have a signal-to-noise < 2 with the colour scale stretching from −2 to 2. Coloured pixels have a signal-to-noise > 2 with a scale stretching from 2 to 50.
+</p>
+
+
+| ❓ | **TASK 2B: *Significance map***|
+|:---------------------------|----|
+|  | Create a significance map of a 400 pixel wide area centred on (3100, 1800). |
+
