@@ -17,5 +17,19 @@ $$ noise = {1 \over \sqrt{weight}} $$
 
 Because of the way these high-level science images were constructed most of the pixels in these images are actually empty (unobserved). For this reason a mask is also provided allowing you to easily mask empty and other unwanted pixels.
 
-![Figure 1: Hubble filters used to observe the HUDF.](/Images/filters.png)
+<figure>
+<p align="center">
+  <img src="/Images/filters.png" alt="Trulli" style="width:60%" align = "center">
+</p>
+<p align = "center">
+Figure 1: Hubble filters used to observe the HUDF.
+</p>
+
+  
+#### This project
+In this project you will learn how to analyse *Hubble* images using python through a series of task. In addition to numpy, scipy, and matplotlib, you will also need to install astropy and photuils. To aid you there are a series of examples in [Examples](/Examples/Examples.html).
+## 1  Basic image analysis
+We’ll begin with a few basic python image analysis tasks to get you started.
+### 1.1  Working with pixels
+First, we’ll look at analysing the pixel data in the image. [example1](/Examples/example1.ipynb) demonstrates how to read in the image data and convert it to an array of pixel values.
 
