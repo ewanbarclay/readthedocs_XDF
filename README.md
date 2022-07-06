@@ -31,5 +31,5 @@ In this project you will learn how to analyse *Hubble* images using python throu
 ## 1  Basic image analysis
 We’ll begin with a few basic python image analysis tasks to get you started.
 ### 1.1  Working with pixels
-First, we’ll look at analysing the pixel data in the image. [example1](/Examples/example1.ipynb) demonstrates how to read in the image data and convert it to an array of pixel values.
+First, we’ll look at analysing the pixel data in the image. [example1](/Examples/example1.html) demonstrates how to read in the image data and convert it to an array of pixel values.
 
