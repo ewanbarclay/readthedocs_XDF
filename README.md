@@ -17,4 +17,5 @@ $$ noise = {1 \over \sqrt{weight}} $$
 
 Because of the way these high-level science images were constructed most of the pixels in these images are actually empty (unobserved). For this reason a mask is also provided allowing you to easily mask empty and other unwanted pixels.
 
+![Figure 1: Hubble filters used to observe the HUDF.](/Images/filters.png)
 
