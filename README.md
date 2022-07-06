@@ -11,7 +11,9 @@ Having quantified uncertainties (errors) is a critical ingredient in science. Th
 ### About the HUDF images
 Hubble imaging of the HUDF consists of imaging in 8 optical and near-IR filters stretching from the blue end of the optical ( 400nm) to almost 2000nm in the near-IR. These filters are named (from blue to red) f435w, f606w, f775w, f850lp, f105w, f125w, f140w, and f160w. The first 4 were obtained with the Advanced Camera for Surveys (ACS) while the final 4 were obtained with Wide Field Camera 3 (WFC3).
 
-The filter transmission curves for these filters, showing the fraction of light transmitted through each filter as a function of wavelength, are shown in Figure. For each filter there are a pair of images: a science (sci) and weight (wht) image. These respectively contain the signal in electrons per second (e/s), and an estimate of the noise in each pixel. The noise can be estimated from the weight according to:
+The filter transmission curves for these filters, showing the fraction of light transmitted through each filter as a function of wavelength, are shown in [Figure 1](/Images/filters.png). 
+
+For each filter there are a pair of images: a science (sci) and weight (wht) image. These respectively contain the signal in electrons per second (e/s), and an estimate of the noise in each pixel. The noise can be estimated from the weight according to:
 
 $$ noise = {1 \over \sqrt{weight}} $$
 
@@ -47,3 +49,16 @@ We’ll now look at exploring some image data. The image data you’ve read in i
 |:---------------------------|----|
 |  | Produce plots of each un-masked weight map. You should do this efficiently with a loop: **do not** simply repeat the code 8 times. You should notice that the weight maps for the f435w, f606w, f775w, and f850lp are different from those for f105w, f125w, f140w, and f160w. This is because images in the former filters were obtained using the advanced camera for surveys (ACS) instrument while the latter were obtained with Wide Field Camera 3 (WFC3). ACS and WFC3 have different field-of-views. For the WFC3 filters also notice the "holes" in the weight maps corresponding to bad areas of the detector (camera). |
  
+<figure>
+<p align="center">
+  <img src="/Images/XDF_centre_f125w.jpg" alt="Trulli" style="width:60%" align = "center">
+</p>
+<p align = "center">
+Figure 2: Plot of the trimmed centre of the F125W-band HUDF created by [example2](/Examples/example2.ipynb).
+</p>
+  
+## 1.4  Combining (stacking) images
+A common task is to combine images either taken with the same filter (often) or with different filters (occasionally). Doing so boosts the sensitivity of the image, albeit, in the latter case, at the expense of the loss of spectral information. To optimise the sensitivity images should be combined by weighting each image with its corresponding weight image. An example of this process is shown in [example4](/Examples/example4.ipynb).
+  
+## 1.5  Making colour images
+Most people’s experience with *Hubble* imaging is from the glorious colour images available here. As explained in the introduction *Hubble’s* does not capture 'colour' images. Instead images in multiple filters are combined together. To obtain 'full-colour' requires at least 3 filters, thereby mimicking the human visual system. The simplest application is to simply map 3 filters to the red (R), green (G), and blue (B) channels. [example3](/Examples/example3.ipynb) demonstrates how to do this using 3 of the ACS bands. Figure 3 shows one of the outputs of [example3](/Examples/example3.ipynb).
