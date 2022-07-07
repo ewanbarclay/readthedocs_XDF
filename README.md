@@ -203,14 +203,12 @@ Next, we know that high-redshift galaxies have a strong spectral break. If the b
 We also expect the shape of the continuum above the break to be flat, or even negative (i.e. decreasing to longer-wavelength). Using a pair of bands above the break (e.g. *f105w* and *f125w*) we can then place an additional constraint allowing us to further weed out contamination. A reasonable choice for ratio lower-limit is ∼ 0.75. <br />
 Finally, any truly high-redshift object should be undetected in any filter shortward of the break. For z ∼7 objects we wouldn’t expect them to be detected in *f435w*, *f606w*, or *f775w*. This can be implemented by enforcing that any candidate object is detected at less than S/N= 2 in those bands.<br />
  In conclusion, our selection criteria can be expressed as follows:
- <br />
+<br />
  
- <p align="center">
-    // *S/N(f<sub>f125w</sub>)* > 10 <br />
+<div align="center">*S/N(f<sub>f125w</sub>)* > 10 <br />
 *f<sub>f850lp</sub>/f<sub>f105w</sub>* < 0.4 <br />
 *f<sub>f105w</sub>/f<sub>f125w</sub>* > 0.75 <br />
-*S/N(f<sub>f435w</sub>)* < 2 ∧ *S/N(f<sub>f606w</sub>)* < 2 ∧ *S/N(f<sub>f775w</sub>)* < 2 
-</p>
+*S/N(f<sub>f435w</sub>)* < 2 ∧ *S/N(f<sub>f606w</sub>)* < 2 ∧ *S/N(f<sub>f775w</sub>)* < 2 </div>
 <br />
 <br />
 
