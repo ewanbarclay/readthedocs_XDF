@@ -161,7 +161,6 @@ overcome this we can use de-blending techniques, again this is demonstrated in [
 |:---------------------------|----|
 |  | Sticking with *n<sub>pixels</sub> = 5* and *threshold = 2.5* now explore the impact of the parameters that control de-blending on the number of sources. |
 <br />  
-
 <br />
 
 ### 2.3  Measuring the signal (and noise) of sources
@@ -195,6 +194,8 @@ The units of the original images are electrons per second (e/s). However, we wan
 | ❓ | **TASK 3A: *Convert to flux***|
 |:---------------------------|----|
 |  | Read in the catalogue you created in Task 2f and convert the signal into a flux (nJy) using the conversion dictionary in example9.py. Plot *f<sub>f105w</sub>/f<sub>125w</sub>* vs. *f<sub>f850lp</sub>/f<sub>105w</sub>* for all the objects in the catalogue. |
+<br />   
+<br />
 
 ### 3.2  Finding distant galaxies
 Firstly, we want to guard against objects which are detected a low-S/N, as these are more likely to be contaminants (or not even real sources). To do this we can simply place a constraint on the signal-to-noise (S/N) in a filter where we know any real high-redshift object should be detected. We are somewhat free to choose the band and threshold but *f<sub>f125w</sub>* and a S/N> 10 is a reasonable choice. <br />   
