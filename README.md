@@ -87,7 +87,7 @@ Figure 3: RGB image of the centre of the F125W-band HUDF created by [example3](/
    
 <br />
 
-| ❓ | **TASK 1C: *RGB image***|
+| ❓ | **TASK 1C: *RGB Image***|
 |:---------------------------|----|
 |  | Using [example3](/Examples/example3.ipynb) and [example4](/Examples/example4.ipynb) as guides produce a false-colour image of the entire masked XDF using <ins>all 8 filters</ins>. You should define 3 groups of consecutive filters (e.g. ['f435w','f606w'], ['f775w','f850lp'], ['f105w','f125w','f140w','f160w']), combine each group, and then combine those stacks together into an RGB image. Congratulations you’ve now created your own pretty HUDF image. By choosing different filters in each group and playing with the scaling you can make an entirely unique and original version. |
 <br />
@@ -203,15 +203,38 @@ Next, we know that high-redshift galaxies have a strong spectral break. If the b
 We also expect the shape of the continuum above the break to be flat, or even negative (i.e. decreasing to longer-wavelength). Using a pair of bands above the break (e.g. *f105w* and *f125w*) we can then place an additional constraint allowing us to further weed out contamination. A reasonable choice for ratio lower-limit is ∼ 0.75. <br />
 Finally, any truly high-redshift object should be undetected in any filter shortward of the break. For z ∼7 objects we wouldn’t expect them to be detected in *f435w*, *f606w*, or *f775w*. This can be implemented by enforcing that any candidate object is detected at less than S/N= 2 in those bands.<br />
  In conclusion, our selection criteria can be expressed as follows:
+ <br />
  
-*S/N(f<sub>f125w</sub>)* > 10 <br />
+ <p align="center">
+    // *S/N(f<sub>f125w</sub>)* > 10 <br />
 *f<sub>f850lp</sub>/f<sub>f105w</sub>* < 0.4 <br />
 *f<sub>f105w</sub>/f<sub>f125w</sub>* > 0.75 <br />
 *S/N(f<sub>f435w</sub>)* < 2 ∧ *S/N(f<sub>f606w</sub>)* < 2 ∧ *S/N(f<sub>f775w</sub>)* < 2 
+</p>
+<br />
+<br />
 
-| ❓ | **TASK 3B: *Convert to flux***|
+| ❓ | **TASK 3B: *Identify high-redshift galaxy candidates***|
 |:---------------------------|----|
-|  | Read in the catalogue you created in Task 2f and convert the signal into a flux (nJy) using the conversion dictionary in example9.py. Plot *f<sub>f105w</sub>/f<sub>125w</sub>* vs. *f<sub>f850lp</sub>/f<sub>105w</sub>* for all the objects in the catalogue. |
+|  | Add the above flux-ratio criteria to your plot from 3a (either as lines or a shaded region). Apply the criteria to your catalogue of objects and highlight any objects meeting the criteria on your plot. |
+<br />   
+<br />
+
+| ❓ | **TASK 3C: *Detection image thumbnail***|
+|:---------------------------|----|
+|  | Using [example7](/Examples/example7.ipynb) as a guide make detection image thumbnail of your candidate(s), if you have any. |
+<br />   
+<br />
+
+| ❓ | **TASK 3D: *More thumbnails***|
+|:---------------------------|----|
+|  | Following on from 3c also make thumbnails in each band (**Hint:** use *subplots* for ease) in addition to an RGB thumbnail. |
+<br />   
+<br />
+
+| ❓ | **TASK 3E: *Aperture photometry STRETCH***|
+|:---------------------------|----|
+|  | Repeat 3a but using your new aperture photometry based catalogue instead. Produce a plot comparing the flux ratios with the different methods. |
 
 
 
