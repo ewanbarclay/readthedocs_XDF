@@ -58,7 +58,7 @@ We’ll now look at exploring some image data. The image data you’ve read in i
   
 <figure>
 <p align="center">
-  <img src="/Images/XDF_centre_f125w.jpg" alt="Trulli" style="width:60%" align = "center">
+  <img src="/Images/XDF_centre_f125w.jpg" alt="Trulli" style="width:35%" align = "center">
 </p>
 <p align = "center">
 Figure 2: Plot of the trimmed centre of the F125W-band HUDF created by [example2](/Examples/example2.ipynb).
@@ -78,7 +78,7 @@ Most people’s experience with *Hubble* imaging is from the glorious colour ima
 
 <figure>
 <p align="center">
-  <img src="/Images/XDF_centre_rgb.jpg" alt="Trulli" style="width:60%" align = "center">
+  <img src="/Images/XDF_centre_rgb.jpg" alt="Trulli" style="width:35%" align = "center">
 </p>
 <p align = "center">
 Figure 3: RGB image of the centre of the F125W-band HUDF created by [example3](/Examples/example3.ipynb).
@@ -114,7 +114,7 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
   
 <figure>
 <p align="center">
-  <img src="/Images/significance map.jpg" alt="Trulli" style="width:60%" align = "center">
+  <img src="/Images/significance map.jpg" alt="Trulli" style="width:35%" align = "center">
 </p>
 <p align = "center">
 Figure 4: : F105W significance image of the centre of the HUDF created by [example5](/Examples/example5.ipynb). Pixels coloured in grey have a signal-to-noise < 2 with the colour scale stretching from −2 to 2. Coloured pixels have a signal-to-noise > 2 with a scale stretching from 2 to 50.
