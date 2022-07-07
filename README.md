@@ -126,4 +126,91 @@ Figure 4: : F105W significance image of the centre of the HUDF created by [examp
 | ❓ | **TASK 2B: *Significance map***|
 |:---------------------------|----|
 |  | Create a significance map of a 400 pixel wide area centred on (3100, 1800). |
+<br />
+   
+<br />
+
+### 2.2  Segmentation
+
+[Segmentation](https://en.wikipedia.org/wiki/Image_segmentation) is one way of detecting sources (objects) in an image. In the simplest implementation we can identify collections of connected pixels which are all above some threshold. Simple segmentation is controlled by two parameters: the minimum number of connected pixels *n<sub>pixels</sub>* and the required significance *threshold* for each pixel. [example6](/Examples/example6.ipynb) demonstrates the use of simple segmentation routines using the *astropy.photutils* module with the results of simple segmentation shown in Figure 5.
+<br />
+   
+<br />
+
+<figure>
+<p align="center">
+  <img src="/Images/segm.png" alt="Trulli" style="width:35%" align = "center">
+</p>
+<p align = "center">
+Figure 5: : F125W segmentation map assuming *n<sub>pixels</sub> = 5* and *threshold = 2.5*.
+</p>
+<br />
+   
+<br />
+
+One problem with simple segmentation like this is that nearby objects are often merged together. To
+overcome this we can use de-blending techniques, again this is demonstrated in [example6](/Examples/example6.ipynb).
+
+| ❓ | **TASK 2C: *Detecting Sources with Segmentation***|
+|:---------------------------|----|
+|  | Create a segmentation image (with no de-blending) of the same region you looked at in 2b. Assuming *n<sub>pixels</sub> = 5* and *threshold = 2.5*. Next, systematically explore the impact of changing npixels (must bean integer) and threshold on the number of sources detected. |
+<br />   
+<br />
+
+| ❓ | **TASK 2D: *The impact of de-blending***|
+|:---------------------------|----|
+|  | Sticking with *n<sub>pixels</sub> = 5* and *threshold = 2.5* now explore the impact of the parameters that control de-blending on the number of sources. |
+<br />  
+
+<br />
+
+### 2.3  Measuring the signal (and noise) of sources
+Our next task is to measure the signal (and noise) of our sources. Again, there are many of ways of doing this. We’ll start off by simply summing the flux in the segmentation region of each object. This is sometimes referred to as an *isophotal* flux though technically this is only truly isophotal if the noise is uniform. This is demonstrated in [example7](/Examples/example7.ipynb) and [example8](/Examples/example8.ipynb).
+
+| ❓ | **TASK 2E: *Measure the signal of all sources***|
+|:---------------------------|----|
+|  | Measure the signal (e/s) of all the sources in the region. To do this you can combine the segmentation map with the detection science image. Plot a histogram. Do the same for the de-blended image and discuss the difference. |
+<br />   
+<br />
+
+| ❓ | **TASK 2F: *Make a multi-band catalogue***|
+|:---------------------------|----|
+|  | Using the original (un-blended) segmentation map measure the signal and noise (or error) of every object in every single filter and create a catalogue using a dictionary. Save this catalogue for use later. |
+
+ A popular alternative is to simply place an aperture over each source and calculate the flux through in that aperture. This can be done easily using *photutils.aperture*. This is demonstrated in [example9](/Examples/example9.ipynb).
+
+| ❓ | **TASK 2G: *Aperture photometry STRETCH***|
+|:---------------------------|----|
+|  | Repeat 2f but using aperture photometry instead. Assume an aperture 5 pixels in radius.|
+<br />
+   
+<br />
+
+## 3  Finding distant galaxies
+High-redshift galaxies can be identified using the Lyman-break technique. This takes advantage of a strong break in the spectrum of galaxies caused by the absorption of ionising photons by inter-stellar and inter-galactic hydrogen.
+
+### 3.1  Changing units
+The units of the original images are electrons per second (e/s). However, we want units of flux^2, for example in nano-Jansky (nJy). The conversion from from e/s to nJy depends on the observatory, instrument, and filter, and thus is unique for each filter: [example10](/Examples/example10.ipynb) contains the relevant conversion in the form of a dictionary.
+
+| ❓ | **TASK 3A: *Convert to flux***|
+|:---------------------------|----|
+|  | Read in the catalogue you created in Task 2f and convert the signal into a flux (nJy) using the conversion dictionary in example9.py. Plot *f<sub>f105w</sub>/f<sub>125w</sub>* vs. *f<sub>f850lp</sub>/f<sub>105w</sub>* for all the objects in the catalogue. |
+
+### 3.2  Finding distant galaxies
+Firstly, we want to guard against objects which are detected a low-S/N, as these are more likely to be contaminants (or not even real sources). To do this we can simply place a constraint on the signal-to-noise (S/N) in a filter where we know any real high-redshift object should be detected. We are somewhat free to choose the band and threshold but *f<sub>f125w</sub>* and a S/N> 10 is a reasonable choice. <br />   
+Next, we know that high-redshift galaxies have a strong spectral break. If the break falls between two bands A and B we’d expect that *f<sub>A</sub>/f<sub>B</sub>* should be small. Galaxies at z ∼ 7 have a break between the *f850lp* and *f105w* bands. A reasonable choice of ratio upper-limit is ∼ 0.4.<br />
+We also expect the shape of the continuum above the break to be flat, or even negative (i.e. decreasing to longer-wavelength). Using a pair of bands above the break (e.g. *f105w* and *f125w*) we can then place an additional constraint allowing us to further weed out contamination. A reasonable choice for ratio lower-limit is ∼ 0.75. <br />
+Finally, any truly high-redshift object should be undetected in any filter shortward of the break. For z ∼7 objects we wouldn’t expect them to be detected in *f435w*, *f606w*, or *f775w*. This can be implemented by enforcing that any candidate object is detected at less than S/N= 2 in those bands.<br />
+ In conclusion, our selection criteria can be expressed as follows:
+ 
+*S/N(f<sub>f125w</sub>)* > 10 <br />
+*f<sub>f850lp</sub>/f<sub>f105w</sub>* < 0.4 <br />
+*f<sub>f105w</sub>/f<sub>f125w</sub>* > 0.75 <br />
+*S/N(f<sub>f435w</sub>)* < 2 ∧ *S/N(f<sub>f606w</sub>)* < 2 ∧ *S/N(f<sub>f775w</sub>)* < 2 
+
+| ❓ | **TASK 3B: *Convert to flux***|
+|:---------------------------|----|
+|  | Read in the catalogue you created in Task 2f and convert the signal into a flux (nJy) using the conversion dictionary in example9.py. Plot *f<sub>f105w</sub>/f<sub>125w</sub>* vs. *f<sub>f850lp</sub>/f<sub>105w</sub>* for all the objects in the catalogue. |
+
+
 
