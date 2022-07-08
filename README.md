@@ -11,7 +11,7 @@ Having quantified uncertainties (errors) is a critical ingredient in science. Th
 ### About the HUDF images
 Hubble imaging of the HUDF consists of imaging in 8 optical and near-IR filters stretching from the blue end of the optical ( 400nm) to almost 2000nm in the near-IR. These filters are named (from blue to red) f435w, f606w, f775w, f850lp, f105w, f125w, f140w, and f160w. The first 4 were obtained with the Advanced Camera for Surveys (ACS) while the final 4 were obtained with Wide Field Camera 3 (WFC3).
 
-The filter transmission curves for these filters, showing the fraction of light transmitted through each filter as a function of wavelength, are shown in [Figure 1](/Images/filters.png). 
+The filter transmission curves for these filters, showing the fraction of light transmitted through each filter as a function of wavelength, are shown in [Figure 1](filters.png). 
 
 For each filter there are a pair of images: a science (sci) and weight (wht) image. These respectively contain the signal in electrons per second (e/s), and an estimate of the noise in each pixel. The noise can be estimated from the weight according to:
 
@@ -22,11 +22,12 @@ Because of the way these high-level science images were constructed most of the 
 <figure>
 <p align="center">
   <img src="/Images/filters.png" alt="Trulli" style="width:60%" align = "center">
+  <figcaption>
+  <p align = "center">
+  <strong>Figure 1:</strong> Hubble filters used to observe the HUDF.
+  </figcaption>
 </p>
-<p align = "center">
-Figure 1: Hubble filters used to observe the HUDF.
-</p>
-
+</figure>
   
 #### This project
 In this project you will learn how to analyse *Hubble* images using python through a series of task. In addition to numpy, scipy, and matplotlib, you will also need to install astropy and photuils. To aid you there are a series of examples in [Examples](/Examples/Examples.ipynb).
@@ -38,6 +39,7 @@ In this project you will learn how to analyse *Hubble* images using python throu
 We’ll begin with a few basic python image analysis tasks to get you started.
 ### 1.1  Working with pixels
 First, we’ll look at analysing the pixel data in the image. [example1](/Examples/example1.ipynb) demonstrates how to read in the image data and convert it to an array of pixel values.
+
 
 | ❓ |**TASK 1A: *Pixel Distribution***|
 |:---------------------------|---|
@@ -61,7 +63,7 @@ We’ll now look at exploring some image data. The image data you’ve read in i
   <img src="/Images/XDF_centre_f125w.jpg" alt="Trulli" style="width:35%" align = "center">
 </p>
 <p align = "center">
-Figure 2: Plot of the trimmed centre of the F125W-band HUDF created by [example2](/Examples/example2.ipynb).
+<strong>Figure 2:</strong> Plot of the trimmed centre of the F125W-band HUDF created by [example2](/Examples/example2.ipynb).
 </p>
 <br />
    
@@ -81,7 +83,7 @@ Most people’s experience with *Hubble* imaging is from the glorious colour ima
   <img src="/Images/XDF_centre_rgb.jpg" alt="Trulli" style="width:35%" align = "center">
 </p>
 <p align = "center">
-Figure 3: RGB image of the centre of the F125W-band HUDF created by [example3](/Examples/example3.ipynb).
+<strong>Figure 3:</strong> RGB image of the centre of the F125W-band HUDF created by [example3](/Examples/example3.ipynb).
 </p>
 <br />
    
@@ -117,7 +119,7 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
   <img src="/Images/significance map.jpg" alt="Trulli" style="width:35%" align = "center">
 </p>
 <p align = "center">
-Figure 4: : F105W significance image of the centre of the HUDF created by [example5](/Examples/example5.ipynb). Pixels coloured in grey have a signal-to-noise < 2 with the colour scale stretching from −2 to 2. Coloured pixels have a signal-to-noise > 2 with a scale stretching from 2 to 50.
+<strong>Figure 4:</strong> F105W significance image of the centre of the HUDF created by [example5](/Examples/example5.ipynb). Pixels coloured in grey have a signal-to-noise < 2 with the colour scale stretching from −2 to 2. Coloured pixels have a signal-to-noise > 2 with a scale stretching from 2 to 50.
 </p>
 <br />
    
@@ -142,7 +144,7 @@ Figure 4: : F105W significance image of the centre of the HUDF created by [examp
   <img src="/Images/segm.png" alt="Trulli" style="width:35%" align = "center">
 </p>
 <p align = "center">
-Figure 5: : F125W segmentation map assuming *n<sub>pixels</sub> = 5* and *threshold = 2.5*.
+<strong>Figure 5:</strong> F125W segmentation map assuming *n<sub>pixels</sub> = 5* and *threshold = 2.5*.
 </p>
 <br />
    
