@@ -207,10 +207,10 @@ Finally, any truly high-redshift object should be undetected in any filter short
  In conclusion, our selection criteria can be expressed as follows:
 <br />
  
-<div align="center">*S/N(f<sub>f125w</sub>)* > 10 <br />
-*f<sub>f850lp</sub>/f<sub>f105w</sub>* < 0.4 <br />
-*f<sub>f105w</sub>/f<sub>f125w</sub>* > 0.75 <br />
-*S/N(f<sub>f435w</sub>)* < 2 ∧ *S/N(f<sub>f606w</sub>)* < 2 ∧ *S/N(f<sub>f775w</sub>)* < 2 </div>
+<div align="center"> <em>S/N(f<sub>f125w</sub>)</em> > 10 <br />
+<em>f<sub>f850lp</sub>/f<sub>f105w</sub></em> < 0.4 <br />
+<em>f<sub>f105w</sub>/f<sub>f125w</sub></em> > 0.75 <br />
+<em>S/N(f<sub>f435w</sub>)</em> < 2 ∧ <em>S/N(f<sub>f606w</sub>)</em> < 2 ∧ <em>S/N(f<sub>f775w</sub>)</em> < 2 </div>
 <br />
 <br />
 
