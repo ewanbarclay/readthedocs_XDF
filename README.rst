@@ -30,15 +30,12 @@ $$ noise = {1 \over \sqrt{weight}} $$
 
 Because of the way these high-level science images were constructed most of the pixels in these images are actually empty (unobserved). For this reason a mask is also provided allowing you to easily mask empty and other unwanted pixels.
 
-<figure>
-<p align="center">
-  <img src="/Images/filters.png" alt="Trulli" style="width:60%" align = "center">
-  <figcaption>
-  <p align = "center">
-  <strong>Figure 1:</strong> Hubble filters used to observe the HUDF.
-  </figcaption>
-</p>
-</figure>
+.. figure:: /Images/filters.png 
+   :width: 500
+   :alt: Figure 1
+   
+   **Figure 1:** Hubble filters used to observe the HUDF.
+  
   
 This project
 ------------
@@ -71,13 +68,12 @@ We’ll now look at exploring some image data. The image data you’ve read in i
 |:---------------------------|----|
 |  | Produce plots of each un-masked weight map. You should do this efficiently with a loop: **do not** simply repeat the code 8 times. You should notice that the weight maps for the f435w, f606w, f775w, and f850lp are different from those for f105w, f125w, f140w, and f160w. This is because images in the former filters were obtained using the advanced camera for surveys (ACS) instrument while the latter were obtained with Wide Field Camera 3 (WFC3). ACS and WFC3 have different field-of-views. For the WFC3 filters also notice the "holes" in the weight maps corresponding to bad areas of the detector (camera). |
   
-<figure>
-<p align="center">
-  <img src="/Images/XDF_centre_f125w.jpg" alt="Trulli" style="width:35%" align = "center">
-</p>
-<p align = "center">
-<strong>Figure 2:</strong> Plot of the trimmed centre of the F125W-band HUDF created by `example2 </Examples/example2.ipynb>`_.
-</p>
+.. figure:: /Images/XDF_centre_f125w.jpg
+   :width: 300
+   :alt: Figure 2
+
+   **Figure 2:** Plot of the trimmed centre of the F125W-band HUDF created by example2.
+
 
 1.4  Combining (stacking) images
 ---------------------------------
@@ -87,14 +83,11 @@ A common task is to combine images either taken with the same filter (often) or 
 --------------------------
 Most people’s experience with *Hubble* imaging is from the glorious colour images available here. As explained in the introduction *Hubble’s* does not capture 'colour' images. Instead images in multiple filters are combined together. To obtain 'full-colour' requires at least 3 filters, thereby mimicking the human visual system. The simplest application is to simply map 3 filters to the red (R), green (G), and blue (B) channels. `example3 </Examples/example3.ipynb>`_ demonstrates how to do this using 3 of the ACS bands. Figure 3 shows one of the outputs of `example3 </Examples/example3.ipynb>`_.
 
-
-<figure>
-<p align="center">
-  <img src="/Images/XDF_centre_rgb.jpg" alt="Trulli" style="width:35%" align = "center">
-</p>
-<p align = "center">
-<strong>Figure 3:</strong> RGB image of the centre of the F125W-band HUDF created by `example3 </Examples/example3.ipynb>`_.
-</p>
+.. figure:: /Images/XDF_centre_rgb.jpg 
+   :width: 300
+   :alt: Figure 3
+   
+   **Figure 3:** RGB image of the centre of the F125W-band HUDF created by example3.
 
 
 | ❓ | **TASK 1C: *RGB Image***|
@@ -120,13 +113,11 @@ $$ weight = {1 \over \{noise^2}} $$
 
 By dividing the signal (science, or sci) map by the noise map (derived from the weight map) we can obtain a significance map, essentially the sigma-to-noise in every pixel. `example5 </Examples/example5.ipynb>`_ demonstrates this and Figure 4 shows the output.
   
-<figure>
-<p align="center">
-  <img src="/Images/significance map.jpg" alt="Trulli" style="width:35%" align = "center">
-</p>
-<p align = "center">
-<strong>Figure 4:</strong> F105W significance image of the centre of the HUDF created by `example5 </Examples/example5.ipynb>`_. Pixels coloured in grey have a signal-to-noise < 2 with the colour scale stretching from −2 to 2. Coloured pixels have a signal-to-noise > 2 with a scale stretching from 2 to 50.
-</p>
+.. figure:: /Images/significance map.jpg
+   :width: 300
+   :alt: Figure 4
+   
+   **Figure 4:** F105W significance image of the centre of the HUDF created by example5. Pixels coloured in grey have a signal-to-noise < 2 with the colour scale stretching from −2 to 2. Coloured pixels have a signal-to-noise > 2 with a scale stretching from 2 to 50.
 
 
 | ❓ | **TASK 2B: *Significance map***|
@@ -139,13 +130,11 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
 `Segmentation <https://en.wikipedia.org/wiki/Image_segmentation>`_ is one way of detecting sources (objects) in an image. In the simplest implementation we can identify collections of connected pixels which are all above some threshold. Simple segmentation is controlled by two parameters: the minimum number of connected pixels *n<sub>pixels</sub>* and the required significance *threshold* for each pixel. `example6 </Examples/example6.ipynb>`_ demonstrates the use of simple segmentation routines using the *astropy.photutils* module with the results of simple segmentation shown in Figure 5.
 
 
-<figure>
-<p align="center">
-  <img src="/Images/segm.png" alt="Trulli" style="width:35%" align = "center">
-</p>
-<p align = "center">
-<strong>Figure 5:</strong> F125W segmentation map assuming *n<sub>pixels</sub> = 5* and *threshold = 2.5*.
-</p>
+.. figure:: /Images/segm.png 
+   :width: 300
+   :alt: Figure 5
+   
+   **Figure 5:** F125W segmentation map assuming *n<sub>pixels</sub> = 5* and *threshold = 2.5*.
 
 
 One problem with simple segmentation like this is that nearby objects are often merged together. To
@@ -212,26 +201,22 @@ Finally, any truly high-redshift object should be undetected in any filter short
 <em>f<sub>f850lp</sub>/f<sub>f105w</sub></em> < 0.4 <br />
 <em>f<sub>f105w</sub>/f<sub>f125w</sub></em> > 0.75 <br />
 <em>S/N(f<sub>f435w</sub>)</em> < 2 ∧ <em>S/N(f<sub>f606w</sub>)</em> < 2 ∧ <em>S/N(f<sub>f775w</sub>)</em> < 2 </div>
-<br />
-<br />
+
 
 | ❓ | **TASK 3B: *Identify high-redshift galaxy candidates***|
 |:---------------------------|----|
 |  | Add the above flux-ratio criteria to your plot from 3a (either as lines or a shaded region). Apply the criteria to your catalogue of objects and highlight any objects meeting the criteria on your plot. |
-<br />   
-<br />
+
 
 | ❓ | **TASK 3C: *Detection image thumbnail***|
 |:---------------------------|----|
 |  | Using `example7 </Examples/example7.ipynb>`_ as a guide make detection image thumbnail of your candidate(s), if you have any. |
-<br />   
-<br />
+
 
 | ❓ | **TASK 3D: *More thumbnails***|
 |:---------------------------|----|
 |  | Following on from 3c also make thumbnails in each band (**Hint:** use *subplots* for ease) in addition to an RGB thumbnail. |
-<br />   
-<br />
+
 
 | ❓ | **TASK 3E: *Aperture photometry STRETCH***|
 |:---------------------------|----|
