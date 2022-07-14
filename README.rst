@@ -19,6 +19,7 @@ Astronomical images are typically held in the `Flexible Image Transport System (
 Uncertainties
 -------------
 Having quantified uncertainties (errors) is a critical ingredient in science. There are actually several different ways to estimate the uncertainty on, for example, the flux of an object. However, the best is when a noise (often expressed as a weight) image is provided.
+
 About the HUDF images
 ---------------------
 Hubble imaging of the HUDF consists of imaging in 8 optical and near-IR filters stretching from the blue end of the optical ( 400nm) to almost 2000nm in the near-IR. These filters are named (from blue to red) f435w, f606w, f775w, f850lp, f105w, f125w, f140w, and f160w. The first 4 were obtained with the Advanced Camera for Surveys (ACS) while the final 4 were obtained with Wide Field Camera 3 (WFC3).
@@ -53,22 +54,30 @@ We’ll begin with a few basic python image analysis tasks to get you started.
 First, we’ll look at analysing the pixel data in the image. `example1 </Examples/example1.ipynb>`_ demonstrates how to read in the image data and convert it to an array of pixel values.
 
 
-| ❓ |**TASK 1A: *Pixel Distribution***|
-|:---------------------------|---|
-|  | First, model the noise as a gaussian centred at zero and estimate σ for the F105W band. **Hint:** there should be no signal contribution to the negative pixels so you can use them to measure σ. To do this first exclude positive pixels. σ will then simply be −P31.7 (i.e. the negative of the 31.7th percentile). Next, exclude pixels with magnitude > 10σ and plot both a density histogram (**Hint:** use plt.hist(..., density = True)) of the pixel distribution and a normal distribution with the same σ as you’ve just calculated. They won’t align perfectly as the pixel distribution unsurprisingly contains more positive pixels. |
+========  ========
+❓         **TASK 1A:** *Pixel Distribution*
+========  ========
+❓         First, model the noise as a gaussian centred at zero and estimate σ for the F105W band. **Hint:** there should be no signal contribution to the negative   pixels so you can use them to measure σ. To do this first exclude positive pixels. σ will then simply be −P31.7 (i.e. the negative of the 31.7th percentile). Next, exclude pixels with magnitude > 10σ and plot both a density histogram (**Hint:** use plt.hist(..., density = True)) of the pixel distribution and a normal distribution with the same σ as you’ve just calculated. They won’t align perfectly as the pixel distribution unsurprisingly contains more positive pixels.
+========  ========
+
+
   
 1.2  Cutting out an image
 -------------------------
 Often we only want to analyse a small portion (a cutout) of an image instead of the full image. This can be done by slicing the image array, for example cutout = img[xmin:xmax, xmin:xmax] or via a python slice. An example of slicing is given in `example2 </Examples/example2.ipynb>`_.
   
+  
 1.3  Making plots of images
 ---------------------------
 We’ll now look at exploring some image data. The image data you’ve read in is simply stored as a 2D array of pixel values. As such we can simply use *plt.imshow(image)* to produce a plot of the image. `example2 </Examples/example2.ipynb>`_ demonstrates how to do this.
   
-| ❓ | **TASK 1B: *Weight Map***|
-|:---------------------------|----|
-|  | Produce plots of each un-masked weight map. You should do this efficiently with a loop: **do not** simply repeat the code 8 times. You should notice that the weight maps for the f435w, f606w, f775w, and f850lp are different from those for f105w, f125w, f140w, and f160w. This is because images in the former filters were obtained using the advanced camera for surveys (ACS) instrument while the latter were obtained with Wide Field Camera 3 (WFC3). ACS and WFC3 have different field-of-views. For the WFC3 filters also notice the "holes" in the weight maps corresponding to bad areas of the detector (camera). |
   
+========  ========
+❓         **TASK 1B:** *Weight Map*
+========  ========
+❓         Produce plots of each un-masked weight map. You should do this efficiently with a loop: **do not** simply repeat the code 8 times. You should notice that the weight maps for the f435w, f606w, f775w, and f850lp are different from those for f105w, f125w, f140w, and f160w. This is because images in the former filters were obtained using the advanced camera for surveys (ACS) instrument while the latter were obtained with Wide Field Camera 3 (WFC3). ACS and WFC3 have different field-of-views. For the WFC3 filters also notice the "holes" in the weight maps corresponding to bad areas of the detector (camera). 
+========  ========
+
 .. figure:: /Images/XDF_centre_f125w.jpg
    :width: 300
    :alt: Figure 2
@@ -90,10 +99,11 @@ Most people’s experience with *Hubble* imaging is from the glorious colour ima
    
    **Figure 3:** RGB image of the centre of the F125W-band HUDF created by example3.
 
-
-| ❓ | **TASK 1C: *RGB Image***|
-|:---------------------------|----|
-|  | Using `example3 </Examples/example3.ipynb>`_ and `example4 </Examples/example4.ipynb>`_ as guides produce a false-colour image of the entire masked XDF using <ins>all 8 filters</ins>. You should define 3 groups of consecutive filters (e.g. ['f435w','f606w'], ['f775w','f850lp'], ['f105w','f125w','f140w','f160w']), combine each group, and then combine those stacks together into an RGB image. Congratulations you’ve now created your own pretty HUDF image. By choosing different filters in each group and playing with the scaling you can make an entirely unique and original version. |
+========  ========
+❓         **TASK 1C:** *RGB Image*
+========  ========
+❓         Using `example3 </Examples/example3.ipynb>`_ and `example4 </Examples/example4.ipynb>`_ as guides produce a false-colour image of the entire masked XDF using <ins>all 8 filters</ins>. You should define 3 groups of consecutive filters (e.g. ['f435w','f606w'], ['f775w','f850lp'], ['f105w','f125w','f140w','f160w']), combine each group, and then combine those stacks together into an RGB image. Congratulations you’ve now created your own pretty HUDF image. By choosing different filters in each group and playing with the scaling you can make an entirely unique and original version.
+========  ========
 
 
 ==================================
@@ -102,9 +112,11 @@ Most people’s experience with *Hubble* imaging is from the glorious colour ima
 
 The next part of the project concentrates on identifying, and measuring the properties of sources or objects.
 
-| ❓ | **TASK 2A: *Detection Image***|
-|:---------------------------|----|
-|  | First of all, following `example4 </Examples/example4.ipynb>`_, create a detection science and weight image by stacking the F105W, F125W, F140W, and F160W images together. You will use this image to detect faint sources. |
+========  ========
+❓         **TASK 2A:** *Detection Image*
+========  ========
+❓         First of all, following `example4 </Examples/example4.ipynb>`_, create a detection science and weight image by stacking the F105W, F125W, F140W, and F160W images together. You will use this image to detect faint sources.
+========  ========
  
 2.1  Significance maps
 -----------------------
@@ -120,11 +132,11 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
    
    **Figure 4:** F105W significance image of the centre of the HUDF created by example5. Pixels coloured in grey have a signal-to-noise < 2 with the colour scale stretching from −2 to 2. Coloured pixels have a signal-to-noise > 2 with a scale stretching from 2 to 50.
 
-
-| ❓ | **TASK 2B: *Significance map***|
-|:---------------------------|----|
-|  | Create a significance map of a 400 pixel wide area centred on (3100, 1800). |
-
+========  ========
+❓         **TASK 2B:** *Significance map*
+========  ========
+❓         Create a significance map of a 400 pixel wide area centred on (3100, 1800).
+========  ========
 
 2.2  Segmentation
 -----------------
@@ -141,34 +153,43 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
 One problem with simple segmentation like this is that nearby objects are often merged together. To
 overcome this we can use de-blending techniques, again this is demonstrated in `example6 </Examples/example6.ipynb>`_.
 
-| ❓ | **TASK 2C: *Detecting Sources with Segmentation***|
-|:---------------------------|----|
-|  | Create a segmentation image (with no de-blending) of the same region you looked at in 2b. Assuming *n<sub>pixels</sub> = 5* and *threshold = 2.5*. Next, systematically explore the impact of changing npixels (must bean integer) and threshold on the number of sources detected. |
 
+========  ========
+❓         **TASK 2C:** *Detecting Sources with Segmentation*
+========  ========
+❓         Create a segmentation image (with no de-blending) of the same region you looked at in 2b. Assuming *n<sub>pixels</sub> = 5* and *threshold = 2.5*. Next, systematically explore the impact of changing npixels (must bean integer) and threshold on the number of sources detected.
+========  ========
 
-| ❓ | **TASK 2D: *The impact of de-blending***|
-|:---------------------------|----|
-|  | Sticking with *n<sub>pixels</sub> = 5* and *threshold = 2.5* now explore the impact of the parameters that control de-blending on the number of sources. |
+========  ========
+❓         **TASK 2D:** *The impact of de-blending*
+========  ========
+❓         Sticking with *n<sub>pixels</sub> = 5* and *threshold = 2.5* now explore the impact of the parameters that control de-blending on the number of sources. 
+========  ========
 
 
 2.3  Measuring the signal (and noise) of sources
 ------------------------------------------------
 Our next task is to measure the signal (and noise) of our sources. Again, there are many of ways of doing this. We’ll start off by simply summing the flux in the segmentation region of each object. This is sometimes referred to as an *isophotal* flux though technically this is only truly isophotal if the noise is uniform. This is demonstrated in `example7 </Examples/example7.ipynb>`_ and `example8 </Examples/example8.ipynb>`_.
 
-| ❓ | **TASK 2E: *Measure the signal of all sources***|
-|:---------------------------|----|
-|  | Measure the signal (e/s) of all the sources in the region. To do this you can combine the segmentation map with the detection science image. Plot a histogram. Do the same for the de-blended image and discuss the difference. |
+========  ========
+❓         **TASK 2E:** *Measure the signal of all sources*
+========  ========
+❓         Measure the signal (e/s) of all the sources in the region. To do this you can combine the segmentation map with the detection science image. Plot a histogram. Do the same for the de-blended image and discuss the difference. 
+========  ========
 
-
-| ❓ | **TASK 2F: *Make a multi-band catalogue***|
-|:---------------------------|----|
-|  | Using the original (un-blended) segmentation map measure the signal and noise (or error) of every object in every single filter and create a catalogue using a dictionary. Save this catalogue for use later. |
+========  ========
+❓         **TASK 2F:** *Make a multi-band catalogue*
+========  ========
+❓         Using the original (un-blended) segmentation map measure the signal and noise (or error) of every object in every single filter and create a catalogue using a dictionary. Save this catalogue for use later.
+========  ========
 
  A popular alternative is to simply place an aperture over each source and calculate the flux through in that aperture. This can be done easily using *photutils.aperture*. This is demonstrated in `example9 </Examples/example9.ipynb>`_.
 
-| ❓ | **TASK 2G: *Aperture photometry STRETCH***|
-|:---------------------------|----|
-|  | Repeat 2f but using aperture photometry instead. Assume an aperture 5 pixels in radius.|
+========  ========
+❓         **TASK 2G:** *Aperture photometry STRETCH*
+========  ========
+❓          Repeat Task 2F but using aperture photometry instead. Assume an aperture 5 pixels in radius.
+========  ========
 
 
 ===========================
@@ -180,10 +201,11 @@ High-redshift galaxies can be identified using the Lyman-break technique. This t
 -------------------
 The units of the original images are electrons per second (e/s). However, we want units of flux^2, for example in nano-Jansky (nJy). The conversion from from e/s to nJy depends on the observatory, instrument, and filter, and thus is unique for each filter: `example10 </Examples/example10.ipynb>`_ contains the relevant conversion in the form of a dictionary.
 
-| ❓ | **TASK 3A: *Convert to flux***|
-|:---------------------------|----|
-|  | Read in the catalogue you created in Task 2f and convert the signal into a flux (nJy) using the conversion dictionary in example9.py. Plot *f<sub>f105w</sub>/f<sub>125w</sub>* vs. *f<sub>f850lp</sub>/f<sub>105w</sub>* for all the objects in the catalogue. |
-
+========  ========
+❓         **TASK 3A:** *Convert to Flux*
+========  ========
+❓           Read in the catalogue you created in Task 2f and convert the signal into a flux (nJy) using the conversion dictionary in example9.py. Plot *f<sub>f105w</sub>/f<sub>125w</sub>* vs. *f<sub>f850lp</sub>/f<sub>105w</sub>* for all the objects in the catalogue. 
+========  ========
 
 3.2  Finding distant galaxies
 -----------------------------
@@ -204,24 +226,27 @@ Finally, any truly high-redshift object should be undetected in any filter short
 <em>S/N(f<sub>f435w</sub>)</em> < 2 ∧ <em>S/N(f<sub>f606w</sub>)</em> < 2 ∧ <em>S/N(f<sub>f775w</sub>)</em> < 2 </div>
 
 
-| ❓ | **TASK 3B: *Identify high-redshift galaxy candidates***|
-|:---------------------------|----|
-|  | Add the above flux-ratio criteria to your plot from 3a (either as lines or a shaded region). Apply the criteria to your catalogue of objects and highlight any objects meeting the criteria on your plot. |
+========  ========
+❓         **TASK 3B:** *Identify high-redshift galaxy candidates*
+========  ========
+❓           Add the above flux-ratio criteria to your plot from 3a (either as lines or a shaded region). Apply the criteria to your catalogue of objects and highlight any objects meeting the criteria on your plot.
+========  ========
+
+========  ========
+❓         **TASK 3C:** *Detection image thumbnail*
+========  ========
+❓          Using `example7 </Examples/example7.ipynb>`_ as a guide make detection image thumbnail of your candidate(s), if you have any.
+========  ========
+
+========  ========
+❓         **TASK 3D:** *More thumbnails*
+========  ========
+❓          Following on from 3c also make thumbnails in each band (**Hint:** use *subplots* for ease) in addition to an RGB thumbnail.
+========  ========
 
 
-| ❓ | **TASK 3C: *Detection image thumbnail***|
-|:---------------------------|----|
-|  | Using `example7 </Examples/example7.ipynb>`_ as a guide make detection image thumbnail of your candidate(s), if you have any. |
-
-
-| ❓ | **TASK 3D: *More thumbnails***|
-|:---------------------------|----|
-|  | Following on from 3c also make thumbnails in each band (**Hint:** use *subplots* for ease) in addition to an RGB thumbnail. |
-
-
-| ❓ | **TASK 3E: *Aperture photometry STRETCH***|
-|:---------------------------|----|
-|  | Repeat 3a but using your new aperture photometry based catalogue instead. Produce a plot comparing the flux ratios with the different methods. |
-
-
-
+========  ========
+❓         **TASK 3E:** *Aperture photometry STRETCH*
+========  ========
+❓          Repeat 3a but using your new aperture photometry based catalogue instead. Produce a plot comparing the flux ratios with the different methods.
+========  ========
