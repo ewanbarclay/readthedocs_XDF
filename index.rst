@@ -124,7 +124,7 @@ $$ weight = {1 \over \{noise^2}} $$
 
 By dividing the signal (science, or sci) map by the noise map (derived from the weight map) we can obtain a significance map, essentially the sigma-to-noise in every pixel. `example5 </Examples/example5.ipynb>`_ demonstrates this and Figure 4 shows the output.
   
-.. figure:: /Images/significance map.jpg
+.. figure:: /Images/significance_map.jpg
    :width: 300
    :alt: Figure 4
    
