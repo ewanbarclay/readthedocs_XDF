@@ -28,7 +28,11 @@ The filter transmission curves for these filters, showing the fraction of light 
 
 For each filter there are a pair of images: a science (sci) and weight (wht) image. These respectively contain the signal in electrons per second (e/s), and an estimate of the noise in each pixel. The noise can be estimated from the weight according to:
 
-$$ noise = {1 \over \sqrt{weight}} $$
+
+.. math:: 
+   noise = \frac{1}{\sqrt{weight}
+  
+   
 
 Because of the way these high-level science images were constructed most of the pixels in these images are actually empty (unobserved). For this reason a mask is also provided allowing you to easily mask empty and other unwanted pixels.
 
@@ -181,7 +185,9 @@ Our next task is to measure the signal (and noise) of our sources. Again, there 
 ❓         Using the original (un-blended) segmentation map measure the signal and noise (or error) of every object in every single filter and create a catalogue using a dictionary. Save this catalogue for use later.
 ========  ========
 
- A popular alternative is to simply place an aperture over each source and calculate the flux through in that aperture. This can be done easily using *photutils.aperture*. This is demonstrated in `example9 </Examples/example9.ipynb>`_.
+
+A popular alternative is to simply place an aperture over each source and calculate the flux through in that aperture. This can be done easily using *photutils.aperture*. This is demonstrated in `example9 </Examples/example9.ipynb>`_.
+
 
 ========  ========
 ❓         **TASK 2G:** *Aperture photometry STRETCH*
@@ -215,13 +221,13 @@ We also expect the shape of the continuum above the break to be flat, or even ne
 
 Finally, any truly high-redshift object should be undetected in any filter shortward of the break. For z ∼7 objects we wouldn’t expect them to be detected in *f435w*, *f606w*, or *f775w*. This can be implemented by enforcing that any candidate object is detected at less than S/N= 2 in those bands.
 
- In conclusion, our selection criteria can be expressed as follows:
+In conclusion, our selection criteria can be expressed as follows:
 
  
-<div align="center"> <em>S/N(f<sub>f125w</sub>)</em> > 10 <br />
-<em>f<sub>f850lp</sub>/f<sub>f105w</sub></em> < 0.4 <br />
-<em>f<sub>f105w</sub>/f<sub>f125w</sub></em> > 0.75 <br />
-<em>S/N(f<sub>f435w</sub>)</em> < 2 ∧ <em>S/N(f<sub>f606w</sub>)</em> < 2 ∧ <em>S/N(f<sub>f775w</sub>)</em> < 2 </div>
+<div align="center"> S/N(f<sub>f125w</sub>) > 10 
+f<sub>f850lp</sub>/f<sub>f105w</sub> < 0.4 
+f<sub>f105w</sub>/f<sub>f125w</sub> > 0.75 
+S/N(f<sub>f435w</sub>) < 2 ∧ S/N(f<sub>f606w</sub>) < 2 ∧ S/N(f<sub>f775w</sub>) < 2 </div>
 
 
 ========  ========
