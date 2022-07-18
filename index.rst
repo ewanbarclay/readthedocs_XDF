@@ -247,16 +247,16 @@ The units of the original images are electrons per second (e/s). However, we wan
 ========  ========
 ❓         **TASK 3A:** *Convert to Flux*
 ========  ========
-|           Read in the catalogue you created in Task 2f and convert the signal into a flux (nJy) using the conversion dictionary in example9.py. Plot *f<sub>f105w</sub>/f<sub>125w</sub>* vs. *f<sub>f850lp</sub>/f<sub>105w</sub>* for all the objects in the catalogue. 
+|           Read in the catalogue you created in Task 2f and convert the signal into a flux (nJy) using the conversion dictionary in example9.py. Plot f\ :sub:`f105w` / f\ :sub:`125w` vs. f\ :sub:`f850lp` /f\ :sub:`105w` for all the objects in the catalogue. 
 ========  ========
 
 |
 
 3.2  Finding distant galaxies
 -----------------------------
-Firstly, we want to guard against objects which are detected a low-S/N, as these are more likely to be contaminants (or not even real sources). To do this we can simply place a constraint on the signal-to-noise (S/N) in a filter where we know any real high-redshift object should be detected. We are somewhat free to choose the band and threshold but *f<sub>f125w</sub>* and a S/N> 10 is a reasonable choice. 
+Firstly, we want to guard against objects which are detected a low-S/N, as these are more likely to be contaminants (or not even real sources). To do this we can simply place a constraint on the signal-to-noise (S/N) in a filter where we know any real high-redshift object should be detected. We are somewhat free to choose the band and threshold but f\ :sub:`f125w` and a S/N> 10 is a reasonable choice. 
 
-Next, we know that high-redshift galaxies have a strong spectral break. If the break falls between two bands A and B we’d expect that *f<sub>A</sub>/f<sub>B</sub>* should be small. Galaxies at z ∼ 7 have a break between the *f850lp* and *f105w* bands. A reasonable choice of ratio upper-limit is ∼ 0.4.
+Next, we know that high-redshift galaxies have a strong spectral break. If the break falls between two bands A and B we’d expect that f\ :sub:`A` /f\ :sub:`B` should be small. Galaxies at z ∼ 7 have a break between the *f850lp* and *f105w* bands. A reasonable choice of ratio upper-limit is ∼ 0.4.
 
 We also expect the shape of the continuum above the break to be flat, or even negative (i.e. decreasing to longer-wavelength). Using a pair of bands above the break (e.g. *f105w* and *f125w*) we can then place an additional constraint allowing us to further weed out contamination. A reasonable choice for ratio lower-limit is ∼ 0.75. 
 
@@ -264,14 +264,17 @@ Finally, any truly high-redshift object should be undetected in any filter short
 
 In conclusion, our selection criteria can be expressed as follows:
 
-S/N(f<sub>f125w</sub>) > 10 
+.. class:: center
 
-f\ :sub: `f850lp`\ / f\:sub:`f105w`< 0.4 
+- S/N(f\ :sub:`f125w` ) > 10 
 
-f<sub>f105w</sub>/f<sub>f125w</sub> > 0.75 
+- f\ :sub:`f850lp` / f\ :sub:`f105w` < 0.4 
 
-S/N(f<sub>f435w</sub>) < 2 ∧ S/N(f<sub>f606w</sub>) < 2 ∧ S/N(f<sub>f775w</sub>) < 2 
+- f\ :sub:`f105w` / f\ :sub:`f125w` > 0.75 
 
+- S/N(f\ :sub:`f435w` ) < 2 ∧ S/N(f\ :sub:`f606w` ) < 2 ∧ S/N(f\ :sub:`f775w` ) < 2 
+
+|
 |
 
 ========  ========
