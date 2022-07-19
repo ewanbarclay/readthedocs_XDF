@@ -176,7 +176,7 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
    :width: 300
    :alt: Figure 5
    
-   **Figure 5:** F125W segmentation map assuming *n<sub>pixels</sub> = 5* and *threshold = 2.5*.
+   **Figure 5:** F125W segmentation map assuming n\ :sub:`pixels` = 5 and threshold = 2.5.
 
 
 One problem with simple segmentation like this is that nearby objects are often merged together. To
