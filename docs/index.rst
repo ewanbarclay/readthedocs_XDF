@@ -315,3 +315,7 @@ Contents
 
    Home <self>
    Introduction
+   task1
+   task2
+   task3
+   
