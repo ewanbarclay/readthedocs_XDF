@@ -1,5 +1,5 @@
 =======================
-1  Basic image analysis
+TASK 1:  Basic image analysis
 =======================
 We’ll begin with a few basic python image analysis tasks to get you started.
 
