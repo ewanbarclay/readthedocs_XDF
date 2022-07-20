@@ -1,5 +1,5 @@
 ==================================
-2  Detecting and measuring sources
+TASK 2:  *Detecting and measuring sources*
 ==================================
 
 The next part of the project concentrates on identifying, and measuring the properties of sources or objects.
