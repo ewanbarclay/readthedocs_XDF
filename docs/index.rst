@@ -306,3 +306,12 @@ In conclusion, our selection criteria can be expressed as follows:
 ========  ========
 |          Repeat 3a but using your new aperture photometry based catalogue instead. Produce a plot comparing the flux ratios with the different methods.
 ========  ========
+
+
+Contents
+--------
+
+.. toctree::
+
+   Home <self>
+   Introduction
