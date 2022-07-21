@@ -20,4 +20,5 @@ Contents
    task1
    task2
    task3
-   
+   api
+   Examples
