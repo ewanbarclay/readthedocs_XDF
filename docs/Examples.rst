@@ -293,13 +293,6 @@ These are the colours you would approximately see!
     ax.imshow(rgb) # shouldn't see much because the scale is dominated by outlier pixels
     fig.savefig('XDF_rgb.png')
 
-
-.. parsed-literal::
-
-    Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
-    
-
-
 .. image:: /docs/Examples_images/output_51_1.png
 
 
@@ -322,15 +315,6 @@ These are the colours you would approximately see!
     
     ax.imshow(centre) # shouldn't see much because the scale is dominated by outlier pixels
     fig.savefig('XDF_centre_rgb.png')
-
-
-.. parsed-literal::
-
-    <ipython-input-6-297ed9f95f44>:7: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
-      centre = rgb[slices]
-    Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
-    
-
 
 .. image:: /docs/Examples_images/output_53_1.png
 
