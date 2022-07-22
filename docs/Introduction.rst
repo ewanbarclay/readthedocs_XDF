@@ -35,7 +35,7 @@ Because of the way these high-level science images were constructed most of the 
 
 |
 
-.. figure:: /Images/filters.png 
+.. figure:: /docs/Images/filters.png 
    :width: 500
    :alt: Figure 1
    
