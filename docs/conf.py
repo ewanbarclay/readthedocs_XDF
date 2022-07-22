@@ -19,7 +19,7 @@
 
 project = "XDF"
 copyright = "2022, Read the Docs core team"
-author = "Barclay"
+
 
 
 # -- General configuration ---------------------------------------------------
