@@ -19,11 +19,10 @@ Examples
     from photutils import CircularAperture
     from photutils import aperture_photometry
 
---------------
 
-----------
+
 Example 1
-----------
+==========
 
 — In this example you can see how to read an image, apply a mask, and
 work with an array of pixel values.
