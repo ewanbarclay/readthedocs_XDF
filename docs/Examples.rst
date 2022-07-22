@@ -181,7 +181,7 @@ low pixels.
 
 
 
-.. image:: output_34_0.png
+.. image:: /docs/Examples_images/output_34_0.png
 
 
 there are various things we can do here. For example, we could give
@@ -200,7 +200,7 @@ range will be mapped to end of the colour scale)
 
 
 
-.. image:: output_37_0.png
+.. image:: /docs/Examples_images/output_37_0.png
 
 
 we can also change the default colour map
@@ -213,7 +213,7 @@ we can also change the default colour map
 
 
 
-.. image:: output_39_0.png
+.. image:: /docs/Examples_images/output_39_0.png
 
 
 instead of showing images in interactive mode we often want to save a
@@ -235,7 +235,7 @@ is pixel perfect.
 
 
 
-.. image:: output_41_0.png
+.. image:: /docs/Examples_images/output_41_0.png
 
 
 --------------
@@ -307,7 +307,7 @@ These are the colours you would approximately see!
     
 
 
-.. image:: output_51_1.png
+.. image:: /docs/Examples_images/output_51_1.png
 
 
 — make a plot of the central 300 pixels of the image
@@ -339,7 +339,7 @@ These are the colours you would approximately see!
     
 
 
-.. image:: output_53_1.png
+.. image:: /docs/Examples_images/output_53_1.png
 
 
 Example 4
@@ -450,7 +450,7 @@ Example 5
 
 
 
-.. image:: output_79_0.png
+.. image:: /docs/Examples_images/output_79_0.png
 
 
 — the above figure can be improved by using two difference scales: one
@@ -470,7 +470,7 @@ and then plot a masked image o pixels with sig>threshold
 
 
 
-.. image:: output_82_0.png
+.. image:: /docs/Examples_images/output_82_0.png
 
 
 version to save
@@ -486,7 +486,7 @@ version to save
 
 
 
-.. image:: output_84_0.png
+.. image:: /docs/Examples_images/output_84_0.png
 
 
 --------------
@@ -579,7 +579,7 @@ colour.
 
 
 
-.. image:: output_102_0.png
+.. image:: /docs/Examples_images/output_102_0.png
 
 
 If two sources overlap simple segmentation can merge them together. This
@@ -610,7 +610,7 @@ can be over-come using de-blending
 
 
 
-.. image:: output_106_0.png
+.. image:: /docs/Examples_images/output_106_0.png
 
 
 --------------
@@ -717,7 +717,7 @@ completely arbitrary.
 
 
 
-.. image:: output_129_0.png
+.. image:: /docs/Examples_images/output_129_0.png
 
 
 — let’s now plot the science (flux) map but only for the same single
@@ -734,7 +734,7 @@ source
 
 
 
-.. image:: output_132_0.png
+.. image:: /docs/Examples_images/output_132_0.png
 
 
 — instead of plotting the entire image we can plot a zoom in of the
@@ -752,7 +752,7 @@ object
 
 
 
-.. image:: output_135_0.png
+.. image:: /docs/Examples_images/output_135_0.png
 
 
 — now lets determine the total flux of that same source by simply
@@ -849,7 +849,7 @@ identified by segmentation.
 
 
 
-.. image:: output_156_0.png
+.. image:: /docs/Examples_images/output_156_0.png
 
 
 — calculate object positions
@@ -878,7 +878,7 @@ identified by segmentation.
 
 
 
-.. image:: output_162_0.png
+.. image:: /docs/Examples_images/output_162_0.png
 
 
 .. code:: ipython3
@@ -1098,7 +1098,7 @@ for the aperture photometry.
 
 
 
-.. image:: output_209_0.png
+.. image:: /docs/Examples_images/output_209_0.png
 
 
 — now let’s do some photometry
