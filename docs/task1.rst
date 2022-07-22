@@ -34,7 +34,7 @@ We’ll now look at exploring some image data. The image data you’ve read in i
 
 |
 
-.. figure:: /Images/XDF_centre_f125w.jpg
+.. figure:: /docs/Images/XDF_centre_f125w.jpg
    :width: 300
    :alt: Figure 2
 
@@ -52,7 +52,7 @@ Most people’s experience with *Hubble* imaging is from the glorious colour ima
 
 |
 
-.. figure:: /Images/XDF_centre_rgb.jpg 
+.. figure:: /docs/Images/XDF_centre_rgb.jpg 
    :width: 300
    :alt: Figure 3
    
