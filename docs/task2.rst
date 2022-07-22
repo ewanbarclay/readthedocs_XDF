@@ -25,7 +25,7 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
  
 |
 
-.. figure:: /Images/significance_map.jpg
+.. figure:: /docs/Images/significance_map.jpg
    :width: 300
    :alt: Figure 4
    
@@ -47,7 +47,7 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
 
 |
 
-.. figure:: /Images/segm.png 
+.. figure:: /docs/Images/segm.png 
    :width: 300
    :alt: Figure 5
    
