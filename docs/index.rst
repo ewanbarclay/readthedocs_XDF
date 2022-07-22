@@ -6,7 +6,7 @@ Exploring the Hubble Ultra Deep Field
 
 This project
 ------------
-In this project you will learn how to analyse *Hubble* images using python through a series of tasks. In addition to numpy, scipy, and matplotlib, you will also need to install astropy and photutils. To aid you there are a series of examples in `Examples <https://github.com/ewanbarclay/readthedocs_XDF/blob/main/docs/Examples/Examples.ipynb>`_.
+In this project you will learn how to analyse *Hubble* images using python through a series of tasks. In addition to numpy, scipy, and matplotlib, you will also need to install astropy and photutils. To aid you there are a series of examples in `Examples <Examples.rst>`_.
 
 |
   
@@ -17,7 +17,8 @@ Contents
 
    Home <self>
    Introduction
+   Examples
    task1
    task2
    task3
-   api
+   
