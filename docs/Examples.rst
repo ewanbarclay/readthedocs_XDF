@@ -180,7 +180,7 @@ low pixels.
 
 
 
-.. image:: /docs/Examples_images/output_34_0.png
+.. image:: /Examples_images/output_34_0.png
 
 
 there are various things we can do here. For example, we could give
@@ -199,7 +199,7 @@ range will be mapped to end of the colour scale)
 
 
 
-.. image:: /docs/Examples_images/output_37_0.png
+.. image:: /Examples_images/output_37_0.png
 
 
 we can also change the default colour map
@@ -212,7 +212,7 @@ we can also change the default colour map
 
 
 
-.. image:: /docs/Examples_images/output_39_0.png
+.. image:: /Examples_images/output_39_0.png
 
 
 instead of showing images in interactive mode we often want to save a
@@ -234,7 +234,7 @@ is pixel perfect.
 
 
 
-.. image:: /docs/Examples_images/output_41_0.png
+.. image:: /Examples_images/output_41_0.png
 
 
 --------------
@@ -301,7 +301,7 @@ These are the colours you would approximately see!
     ax.imshow(rgb) # shouldn't see much because the scale is dominated by outlier pixels
     fig.savefig('XDF_rgb.png')
 
-.. image:: /docs/Examples_images/output_51_1.png
+.. image:: /Examples_images/output_51_1.png
 
 
 — make a plot of the central 300 pixels of the image
@@ -324,7 +324,7 @@ These are the colours you would approximately see!
     ax.imshow(centre) # shouldn't see much because the scale is dominated by outlier pixels
     fig.savefig('XDF_centre_rgb.png')
 
-.. image:: /docs/Examples_images/output_53_1.png
+.. image:: /Examples_images/output_53_1.png
 
 .. _Example4:
 
@@ -438,7 +438,7 @@ Example 5
 
 
 
-.. image:: /docs/Examples_images/output_79_0.png
+.. image:: /Examples_images/output_79_0.png
 
 
 — the above figure can be improved by using two difference scales: one
@@ -458,7 +458,7 @@ and then plot a masked image o pixels with sig>threshold
 
 
 
-.. image:: /docs/Examples_images/output_82_0.png
+.. image:: /Examples_images/output_82_0.png
 
 
 version to save
@@ -474,7 +474,7 @@ version to save
 
 
 
-.. image:: /docs/Examples_images/output_84_0.png
+.. image:: /Examples_images/output_84_0.png
 
 
 --------------
@@ -569,7 +569,7 @@ colour.
 
 
 
-.. image:: /docs/Examples_images/output_102_0.png
+.. image:: /Examples_images/output_102_0.png
 
 
 If two sources overlap simple segmentation can merge them together. This
@@ -600,7 +600,7 @@ can be over-come using de-blending
 
 
 
-.. image:: /docs/Examples_images/output_106_0.png
+.. image:: /Examples_images/output_106_0.png
 
 
 --------------
@@ -709,7 +709,7 @@ completely arbitrary.
 
 
 
-.. image:: /docs/Examples_images/output_129_0.png
+.. image:: /Examples_images/output_129_0.png
 
 
 — let’s now plot the science (flux) map but only for the same single
@@ -726,7 +726,7 @@ source
 
 
 
-.. image:: /docs/Examples_images/output_132_0.png
+.. image:: /Examples_images/output_132_0.png
 
 
 — instead of plotting the entire image we can plot a zoom in of the
@@ -744,7 +744,7 @@ object
 
 
 
-.. image:: /docs/Examples_images/output_135_0.png
+.. image:: /Examples_images/output_135_0.png
 
 
 — now lets determine the total flux of that same source by simply
@@ -842,7 +842,7 @@ identified by segmentation.
 
 
 
-.. image:: /docs/Examples_images/output_156_0.png
+.. image:: /Examples_images/output_156_0.png
 
 
 — calculate object positions
@@ -1095,7 +1095,7 @@ for the aperture photometry.
 
 
 
-.. image:: /docs/Examples_images/output_209_0.png
+.. image:: /Examples_images/output_209_0.png
 
 
 — now let’s do some photometry
