@@ -1,5 +1,7 @@
+.. _Examples:
+
 Examples
-========
+==========
 
 --------------
 
@@ -21,8 +23,10 @@ Examples
 
 --------------
 
+.. _Example1:
+
 Example 1
----------
+-----------
 
 — In this example you can see how to read an image, apply a mask, and
 work with an array of pixel values.
@@ -112,8 +116,10 @@ work with an array of pixel values.
 
 --------------
 
+.. _Example2:
+
 Example 2
----------
+-----------
 
 — In this example you can see how to obtain a cutout of an image and
 produce a .png of the cutout.
@@ -233,6 +239,8 @@ is pixel perfect.
 
 --------------
 
+.. _Example3:
+
 Example 3
 ---------
 
@@ -318,6 +326,7 @@ These are the colours you would approximately see!
 
 .. image:: /docs/Examples_images/output_53_1.png
 
+.. _Example4:
 
 Example 4
 ---------
@@ -371,6 +380,8 @@ read in later. To read back in simply use “array = np.load(filename)”
         np.save(f'{filename}_wht.npy', combined_wht)
 
 --------------
+
+.. _Example5:
 
 Example 5
 ---------
@@ -467,6 +478,8 @@ version to save
 
 
 --------------
+
+.. _Example6:
 
 Example 6
 ---------
@@ -591,6 +604,8 @@ can be over-come using de-blending
 
 
 --------------
+
+.. _Example7:
 
 Example 7
 ---------
@@ -762,6 +777,8 @@ where the segmentation map = the index of our target galaxy:
 
 --------------
 
+.. _Example7a:
+
 Example 7a
 ----------
 
@@ -879,6 +896,8 @@ identified by segmentation.
 
 --------------
 
+.. _Example8:
+
 Example 8
 ---------
 
@@ -978,6 +997,8 @@ uncertainty or error. The error is the sqrt(sum(noise_i**2))
     
 
 --------------
+
+.. _Example9:
 
 Example 9
 ---------
@@ -1115,6 +1136,8 @@ for the aperture photometry.
     
 
 --------------
+
+.. _Example10:
 
 Example 10
 ----------
