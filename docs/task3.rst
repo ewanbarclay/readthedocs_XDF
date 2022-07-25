@@ -29,7 +29,6 @@ Finally, any truly high-redshift object should be undetected in any filter short
 
 In conclusion, our selection criteria can be expressed as follows:
 
-.. class:: center
 
 - S/N(f\ :sub:`f125w` ) > 10 
 
