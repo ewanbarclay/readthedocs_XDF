@@ -5,7 +5,7 @@ We’ll begin with a few basic python image analysis tasks to get you started.
 
 1.1  Working with pixels
 -------------------------
-First, we’ll look at analysing the pixel data in the image. `example1 </Examples/example1.ipynb>`_ demonstrates how to read in the image data and convert it to an array of pixel values.
+First, we’ll look at analysing the pixel data in the image. :ref:`Example1` demonstrates how to read in the image data and convert it to an array of pixel values.
 
 |
 
