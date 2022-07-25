@@ -5,14 +5,14 @@ High-redshift galaxies can be identified using the Lyman-break technique. This t
 
 3.1  Changing units
 -------------------
-The units of the original images are electrons per second (e/s). However, we want units of flux^2, for example in nano-Jansky (nJy). The conversion from from e/s to nJy depends on the observatory, instrument, and filter, and thus is unique for each filter: `example10 </Examples/example10.ipynb>`_ contains the relevant conversion in the form of a dictionary.
+The units of the original images are electrons per second (e/s). However, we want units of flux^2, for example in nano-Jansky (nJy). The conversion from from e/s to nJy depends on the observatory, instrument, and filter, and thus is unique for each filter: :ref:`Example10` contains the relevant conversion in the form of a dictionary.
 
 |
 
 ========  ========
 ❓         **TASK 3A:** *Convert to Flux*
 ========  ========
-|           Read in the catalogue you created in Task 2f and convert the signal into a flux (nJy) using the conversion dictionary in example9.py. Plot f\ :sub:`f105w` / f\ :sub:`125w` vs. f\ :sub:`f850lp` /f\ :sub:`105w` for all the objects in the catalogue. 
+|           Read in the catalogue you created in Task 2f and convert the signal into a flux (nJy) using the conversion dictionary in :ref:`Example9`. Plot f\ :sub:`f105w` / f\ :sub:`125w` vs. f\ :sub:`f850lp` /f\ :sub:`105w` for all the objects in the catalogue. 
 ========  ========
 
 |
@@ -53,7 +53,7 @@ In conclusion, our selection criteria can be expressed as follows:
 ========  ========
 ❓         **TASK 3C:** *Detection image thumbnail*
 ========  ========
-|          Using `example7 </Examples/example7.ipynb>`_ as a guide make detection image thumbnail of your candidate(s), if you have any.
+|          Using :ref:`Example7` as a guide make detection image thumbnail of your candidate(s), if you have any.
 ========  ========
 
 |
