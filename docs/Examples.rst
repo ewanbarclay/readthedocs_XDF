@@ -769,9 +769,6 @@ where the segmentation map = the index of our target galaxy:
 
     print(f'signal using science image + np.where command on segmentation map: {np.sum(sci[np.where(segm.data==i)])}')
 
-
-
-`Examples`_.
 .. parsed-literal::
 
     signal using science image + np.where command on segmentation map: 1.711333990097046
