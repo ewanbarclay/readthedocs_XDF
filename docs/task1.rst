@@ -52,7 +52,7 @@ Most people’s experience with *Hubble* imaging is from the glorious colour ima
 
 |
 
-.. figure:: /docs/Images/XDF_centre_rgb.jpg 
+.. figure:: /Images/XDF_centre_rgb.jpg 
    :width: 300
    :alt: Figure 3
    
