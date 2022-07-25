@@ -7,7 +7,7 @@ The next part of the project concentrates on identifying, and measuring the prop
 ========  ========
 ❓         **TASK 2A:** *Detection Image*
 ========  ========
-|         First of all, following `example4 </Examples/example4.ipynb>`_, create a detection science and weight image by stacking the F105W, F125W, F140W, and F160W images together. You will use this image to detect faint sources.
+|         First of all, following :ref:`Example4`, create a detection science and weight image by stacking the F105W, F125W, F140W, and F160W images together. You will use this image to detect faint sources.
 ========  ========
  
 |
@@ -21,7 +21,7 @@ To identify sources we need to have an estimate of the noise in each pixel. In t
     
 :raw-math:`$$ weight = \frac{1}{noise^2} $$`
 
-By dividing the signal (science, or sci) map by the noise map (derived from the weight map) we can obtain a significance map, essentially the sigma-to-noise in every pixel. `example5 </Examples/example5.ipynb>`_ demonstrates this and Figure 4 shows the output.
+By dividing the signal (science, or sci) map by the noise map (derived from the weight map) we can obtain a significance map, essentially the sigma-to-noise in every pixel. :ref:`Example5` demonstrates this and Figure 4 shows the output.
  
 |
 
@@ -43,7 +43,7 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
 
 2.2  Segmentation
 -----------------
-`Segmentation <https://en.wikipedia.org/wiki/Image_segmentation>`_ is one way of detecting sources (objects) in an image. In the simplest implementation we can identify collections of connected pixels which are all above some threshold. Simple segmentation is controlled by two parameters: the minimum number of connected pixels *n<sub>pixels</sub>* and the required significance *threshold* for each pixel. `example6 </Examples/example6.ipynb>`_ demonstrates the use of simple segmentation routines using the *astropy.photutils* module with the results of simple segmentation shown in Figure 5.
+`Segmentation <https://en.wikipedia.org/wiki/Image_segmentation>`_ is one way of detecting sources (objects) in an image. In the simplest implementation we can identify collections of connected pixels which are all above some threshold. Simple segmentation is controlled by two parameters: the minimum number of connected pixels n\ :sub:`pixels`\  and the required significance *threshold* for each pixel. :ref:`Example6` demonstrates the use of simple segmentation routines using the *astropy.photutils* module with the results of simple segmentation shown in Figure 5.
 
 |
 
@@ -55,14 +55,14 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
 
 
 One problem with simple segmentation like this is that nearby objects are often merged together. To
-overcome this we can use de-blending techniques, again this is demonstrated in `example6 </Examples/example6.ipynb>`_.
+overcome this we can use de-blending techniques, again this is demonstrated in :ref:`Example6`.
 
 |
 
 ========  ========
 ❓         **TASK 2C:** *Detecting Sources with Segmentation*
 ========  ========
-|         Create a segmentation image (with no de-blending) of the same region you looked at in 2b. Assuming *n<sub>pixels</sub> = 5* and *threshold = 2.5*. Next, systematically explore the impact of changing npixels (must bean integer) and threshold on the number of sources detected.
+|         Create a segmentation image (with no de-blending) of the same region you looked at in 2b. Assuming n\ :sub:`pixels` = 5 and *threshold = 2.5*. Next, systematically explore the impact of changing npixels (must bean integer) and threshold on the number of sources detected.
 ========  ========
 
 |
@@ -70,14 +70,14 @@ overcome this we can use de-blending techniques, again this is demonstrated in `
 ========  ========
 ❓         **TASK 2D:** *The impact of de-blending*
 ========  ========
-|         Sticking with *n<sub>pixels</sub> = 5* and *threshold = 2.5* now explore the impact of the parameters that control de-blending on the number of sources. 
+|         Sticking with n\ :sub:`pixels` = 5 and *threshold = 2.5* now explore the impact of the parameters that control de-blending on the number of sources. 
 ========  ========
 
 |
 
 2.3  Measuring the signal (and noise) of sources
 ------------------------------------------------
-Our next task is to measure the signal (and noise) of our sources. Again, there are many of ways of doing this. We’ll start off by simply summing the flux in the segmentation region of each object. This is sometimes referred to as an *isophotal* flux though technically this is only truly isophotal if the noise is uniform. This is demonstrated in `example7 </Examples/example7.ipynb>`_ and `example8 </Examples/example8.ipynb>`_.
+Our next task is to measure the signal (and noise) of our sources. Again, there are many of ways of doing this. We’ll start off by simply summing the flux in the segmentation region of each object. This is sometimes referred to as an *isophotal* flux though technically this is only truly isophotal if the noise is uniform. This is demonstrated in :ref:`Example7` and :ref:`Example8`.
 
 |
 
@@ -96,7 +96,7 @@ Our next task is to measure the signal (and noise) of our sources. Again, there 
 ========  ========
 
 
-A popular alternative is to simply place an aperture over each source and calculate the flux through in that aperture. This can be done easily using *photutils.aperture*. This is demonstrated in `example9 </Examples/example9.ipynb>`_.
+A popular alternative is to simply place an aperture over each source and calculate the flux through in that aperture. This can be done easily using *photutils.aperture*. This is demonstrated in :ref:`Example9`.
 
 |
 
