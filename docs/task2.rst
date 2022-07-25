@@ -19,7 +19,7 @@ To identify sources we need to have an estimate of the noise in each pixel. In t
 .. role:: raw-math(raw)
     :format: latex html
     
-:raw-math:`$$ weight = \frac{1}{noise^2} $$`
+:math:`$$ weight = \frac{1}{noise^2} $$`
 
 By dividing the signal (science, or sci) map by the noise map (derived from the weight map) we can obtain a significance map, essentially the sigma-to-noise in every pixel. :ref:`Example5` demonstrates this and Figure 4 shows the output.
  
