@@ -16,7 +16,7 @@ The next part of the project concentrates on identifying, and measuring the prop
 -----------------------
 To identify sources we need to have an estimate of the noise in each pixel. In the context of *Hubble* this is provided by the weight (wht) map in each filter. The values in this image correspond to:
 
-:math:` weight = \frac{1}{noise^2} `
+:math:`$$ weight = \frac{1}{noise^2} $$`
 
 By dividing the signal (science, or sci) map by the noise map (derived from the weight map) we can obtain a significance map, essentially the sigma-to-noise in every pixel. :ref:`Example5` demonstrates this and Figure 4 shows the output.
  
