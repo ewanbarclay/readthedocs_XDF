@@ -5,7 +5,7 @@ High-redshift galaxies can be identified using the Lyman-break technique. This t
 
 3.1  Changing units
 -------------------
-The units of the original images are electrons per second (e/s). However, we want units of flux^2, for example in nano-Jansky (nJy). The conversion from from e/s to nJy depends on the observatory, instrument, and filter, and thus is unique for each filter: :ref:`Example10` contains the relevant conversion in the form of a dictionary.
+The units of the original images are electrons per second (e/s). However, we want units of flux\ :sup:`2`, for example in nano-Jansky (nJy). The conversion from from e/s to nJy depends on the observatory, instrument, and filter, and thus is unique for each filter: :ref:`Example10` contains the relevant conversion in the form of a dictionary.
 
 |
 
