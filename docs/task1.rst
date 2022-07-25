@@ -34,7 +34,7 @@ We’ll now look at exploring some image data. The image data you’ve read in i
 
 |
 
-.. figure:: /docs/Images/XDF_centre_f125w.jpg
+.. figure:: /Images/XDF_centre_f125w.jpg
    :width: 300
    :alt: Figure 2
 
