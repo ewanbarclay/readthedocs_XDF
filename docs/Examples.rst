@@ -1,8 +1,9 @@
 .. _Examples:
 
 Examples
-~~~~~~~~~~~~
+==========
 
+Reference `Examples`_.
 --------------
 
 —Required Modules:
