@@ -7,13 +7,15 @@ We’ll begin with a few basic python image analysis tasks to get you started.
 -------------------------
 First, we’ll look at analysing the pixel data in the image. :ref:`Example1` demonstrates how to read in the image data and convert it to an array of pixel values.
 
-|
+
 
 ========  ========
 ❓         **TASK 1A:** *Pixel Distribution*
 ========  ========
 |         First, model the noise as a gaussian centred at zero and estimate σ for the F105W band. **Hint:** there should be no signal contribution to the negative   pixels so you can use them to measure σ. To do this first exclude positive pixels. σ will then simply be −P31.7 (i.e. the negative of the 31.7th percentile). Next, exclude pixels with magnitude > 10σ and plot both a density histogram (**Hint:** use plt.hist(..., density = True)) of the pixel distribution and a normal distribution with the same σ as you’ve just calculated. They won’t align perfectly as the pixel distribution unsurprisingly contains more positive pixels.
 ========  ========
+
+|
 
 1.2  Cutting out an image
 -------------------------
