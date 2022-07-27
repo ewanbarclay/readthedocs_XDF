@@ -16,9 +16,7 @@ The next part of the project concentrates on identifying, and measuring the prop
 -----------------------
 To identify sources we need to have an estimate of the noise in each pixel. In the context of *Hubble* this is provided by the weight (wht) map in each filter. The values in this image correspond to:
 
-.. centered::
-
-:math:`weight = \frac{1}{noise^2}`
+.. centered:: :math:`weight = \frac{1}{noise^2}`
 
 By dividing the signal (science, or sci) map by the noise map (derived from the weight map) we can obtain a significance map, essentially the sigma-to-noise in every pixel. :ref:`Example5` demonstrates this and Figure 4 shows the output.
  
@@ -27,6 +25,7 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
 .. figure:: /Images/significance_map.jpg
    :width: 300
    :alt: Figure 4
+   :align: center
    
    **Figure 4:** F105W significance image of the centre of the HUDF created by example5. Pixels coloured in grey have a signal-to-noise < 2 with the colour scale stretching from −2 to 2. Coloured pixels have a signal-to-noise > 2 with a scale stretching from 2 to 50.
 
@@ -49,6 +48,7 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
 .. figure:: /Images/segm.png 
    :width: 300
    :alt: Figure 5
+   :align: center
    
    **Figure 5:** F125W segmentation map assuming n\ :sub:`pixels` = 5 and threshold = 2.5.
 
