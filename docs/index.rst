@@ -1,7 +1,6 @@
-.. centered:: 
-  #######################################
-  Exploring the Hubble Ultra Deep Field
-  #######################################
+#######################################
+Exploring the Hubble Ultra Deep Field
+#######################################
 
 .. centered:: Stephen Wilkins   
   
