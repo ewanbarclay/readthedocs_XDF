@@ -78,7 +78,6 @@ overcome this we can use de-blending techniques, again this is demonstrated in :
 ------------------------------------------------
 Our next task is to measure the signal (and noise) of our sources. Again, there are many of ways of doing this. We’ll start off by simply summing the flux in the segmentation region of each object. This is sometimes referred to as an *isophotal* flux though technically this is only truly isophotal if the noise is uniform. This is demonstrated in :ref:`Example7` and :ref:`Example8`.
 
-|
 
 ========  ========
 ❓         **TASK 2E:** *Measure the signal of all sources*
@@ -97,7 +96,6 @@ Our next task is to measure the signal (and noise) of our sources. Again, there 
 
 A popular alternative is to simply place an aperture over each source and calculate the flux through in that aperture. This can be done easily using *photutils.aperture*. This is demonstrated in :ref:`Example9`.
 
-|
 
 ========  ========
 ❓         **TASK 2G:** *Aperture photometry STRETCH*
