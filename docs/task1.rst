@@ -26,7 +26,7 @@ Often we only want to analyse a small portion (a cutout) of an image instead of 
 ---------------------------
 We’ll now look at exploring some image data. The image data you’ve read in is simply stored as a 2D array of pixel values. As such we can simply use *plt.imshow(image)* to produce a plot of the image. :ref:`Example2` demonstrates how to do this.
 
-|
+
 
 ========  ========
 ❓         **TASK 1B:** *Weight Map*
@@ -34,7 +34,6 @@ We’ll now look at exploring some image data. The image data you’ve read in i
 |         Produce plots of each un-masked weight map. You should do this efficiently with a loop: **do not** simply repeat the code 8 times. You should notice that the weight maps for the f435w, f606w, f775w, and f850lp are different from those for f105w, f125w, f140w, and f160w. This is because images in the former filters were obtained using the advanced camera for surveys (ACS) instrument while the latter were obtained with Wide Field Camera 3 (WFC3). ACS and WFC3 have different field-of-views. For the WFC3 filters also notice the "holes" in the weight maps corresponding to bad areas of the detector (camera). 
 ========  ========
 
-|
 
 .. figure:: /Images/XDF_centre_f125w.jpg
    :width: 300
@@ -53,7 +52,7 @@ A common task is to combine images either taken with the same filter (often) or 
 --------------------------
 Most people’s experience with *Hubble* imaging is from the glorious colour images available here. As explained in the introduction *Hubble’s* does not capture 'colour' images. Instead images in multiple filters are combined together. To obtain 'full-colour' requires at least 3 filters, thereby mimicking the human visual system. The simplest application is to simply map 3 filters to the red (R), green (G), and blue (B) channels. :ref:`Example3` demonstrates how to do this using 3 of the ACS bands. Figure 3 shows one of the outputs of :ref:`Example3`.
 
-|
+
 
 .. figure:: /Images/XDF_centre_rgb.jpg 
    :width: 300
