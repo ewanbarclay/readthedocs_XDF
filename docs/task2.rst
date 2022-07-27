@@ -20,7 +20,7 @@ To identify sources we need to have an estimate of the noise in each pixel. In t
 
 By dividing the signal (science, or sci) map by the noise map (derived from the weight map) we can obtain a significance map, essentially the sigma-to-noise in every pixel. :ref:`Example5` demonstrates this and Figure 4 shows the output.
  
-|
+
 
 .. figure:: /Images/significance_map.jpg
    :width: 300
@@ -29,7 +29,7 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
    
    **Figure 4:** F105W significance image of the centre of the HUDF created by example5. Pixels coloured in grey have a signal-to-noise < 2 with the colour scale stretching from −2 to 2. Coloured pixels have a signal-to-noise > 2 with a scale stretching from 2 to 50.
 
-|
+
 
 ========  ========
 ❓         **TASK 2B:** *Significance map*
@@ -43,7 +43,7 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
 -----------------
 `Segmentation <https://en.wikipedia.org/wiki/Image_segmentation>`_ is one way of detecting sources (objects) in an image. In the simplest implementation we can identify collections of connected pixels which are all above some threshold. Simple segmentation is controlled by two parameters: the minimum number of connected pixels n\ :sub:`pixels`\  and the required significance *threshold* for each pixel. :ref:`Example6` demonstrates the use of simple segmentation routines using the *astropy.photutils* module with the results of simple segmentation shown in Figure 5.
 
-|
+
 
 .. figure:: /Images/segm.png 
    :width: 300
@@ -56,7 +56,7 @@ By dividing the signal (science, or sci) map by the noise map (derived from the 
 One problem with simple segmentation like this is that nearby objects are often merged together. To
 overcome this we can use de-blending techniques, again this is demonstrated in :ref:`Example6`.
 
-|
+
 
 ========  ========
 ❓         **TASK 2C:** *Detecting Sources with Segmentation*
@@ -85,7 +85,7 @@ Our next task is to measure the signal (and noise) of our sources. Again, there 
 |         Measure the signal (e/s) of all the sources in the region. To do this you can combine the segmentation map with the detection science image. Plot a histogram. Do the same for the de-blended image and discuss the difference. 
 ========  ========
 
-|
+
 
 ========  ========
 ❓         **TASK 2F:** *Make a multi-band catalogue*
