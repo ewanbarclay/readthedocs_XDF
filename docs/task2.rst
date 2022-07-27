@@ -85,7 +85,7 @@ Our next task is to measure the signal (and noise) of our sources. Again, there 
 |         Measure the signal (e/s) of all the sources in the region. To do this you can combine the segmentation map with the detection science image. Plot a histogram. Do the same for the de-blended image and discuss the difference. 
 ========  ========
 
-
+|
 
 ========  ========
 ❓         **TASK 2F:** *Make a multi-band catalogue*
