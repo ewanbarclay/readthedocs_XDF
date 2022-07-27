@@ -37,7 +37,8 @@ We’ll now look at exploring some image data. The image data you’ve read in i
 .. figure:: /Images/XDF_centre_f125w.jpg
    :width: 300
    :alt: Figure 2
-
+   :align: center
+   
    **Figure 2:** Plot of the trimmed centre of the F125W-band HUDF created by :ref:`Example2`.
 
 |
@@ -55,6 +56,7 @@ Most people’s experience with *Hubble* imaging is from the glorious colour ima
 .. figure:: /Images/XDF_centre_rgb.jpg 
    :width: 300
    :alt: Figure 3
+   :align: center
    
    **Figure 3:** RGB image of the centre of the F125W-band HUDF created by :ref:`Example3`.
 
