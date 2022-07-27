@@ -3,11 +3,8 @@ Exploring the Hubble Ultra Deep Field
 #######################################
 
 .. centered:: Stephen Wilkins   
-  
-  *s.wilkins@sussex.ac.uk* 
-  
-  University of Sussex
-
+.. centered:: *s.wilkins@sussex.ac.uk* 
+.. centered:: University of Sussex
 
 This project
 ------------
