@@ -26,7 +26,6 @@ The filter transmission curves for these filters, showing the fraction of light 
 For each filter there are a pair of images: a science (sci) and weight (wht) image. These respectively contain the signal in electrons per second (e/s), and an estimate of the noise in each pixel. The noise can be estimated from the weight according to:
 
 .. centered::
-
 :math:`noise = \frac{1}{\sqrt{weight}}`
     
 
@@ -37,6 +36,7 @@ Because of the way these high-level science images were constructed most of the 
 .. figure:: /Images/filters.png 
    :width: 500
    :alt: Figure 1
+   :align: center
    
    **Figure 1:** Hubble filters used to observe the HUDF.
   
